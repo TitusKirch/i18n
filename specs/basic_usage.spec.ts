@@ -41,10 +41,10 @@ test('basic usage', async () => {
   expect(await page.locator('#nuxt-link-locale-usages .nest-path a').getAttribute('href')).toEqual('/user/profile')
   expect(await page.locator('#nuxt-link-locale-usages .nest-named a').getAttribute('href')).toEqual('/user/profile')
   expect(await page.locator('#nuxt-link-locale-usages .object-with-named a').getAttribute('href')).toEqual(
-    'https://nuxt.com/'
+    '/category/nintendo'
   )
   expect(await page.locator('#nuxt-link-locale-usages .external-url a').getAttribute('href')).toEqual(
-    '/category/nintendo'
+    'https://nuxt.com/'
   )
 
   // Language switching path localizing with `useSwitchLocalePath`
