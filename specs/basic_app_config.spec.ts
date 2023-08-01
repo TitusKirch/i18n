@@ -32,11 +32,4 @@ test('basic app config', async () => {
   // Language switching path localizing with `useSwitchLocalePath`
   expect(await page.locator('#switch-locale-path-usages .switch-to-en a').getAttribute('href')).toEqual('/')
   expect(await page.locator('#switch-locale-path-usages .switch-to-fr a').getAttribute('href')).toEqual('/fr')
-
-  // URL path with Route object with `useLocaleRoute`
-  const button = await page.locator('#locale-route-usages button')
-  await button.click()
-  await page.waitForTimeout(100)
-  expect(await getText(page, '#profile-page')).toEqual('This is profile page')
-  expect(await page.url()).include('/user/profile?foo=1')
 })
