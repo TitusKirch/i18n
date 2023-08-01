@@ -10,6 +10,13 @@ const category = ref({
   title: 'Kirby',
   slug: 'nintendo'
 })
+
+function onClick() {
+  const route = localeRoute({ name: 'user-profile', query: { foo: '1' } })
+  if (route) {
+    return navigateTo(route.fullPath)
+  }
+}
 </script>
 
 <template>
@@ -86,6 +93,10 @@ const category = ref({
           <NuxtLink :to="switchLocalePath('fr')">Français</NuxtLink>
         </li>
       </ul>
+    </section>
+    <section id="locale-route-usages">
+      <h3>localeRoute</h3>
+      <button @click="onClick">Show profile</button>
     </section>
   </div>
 </template>
